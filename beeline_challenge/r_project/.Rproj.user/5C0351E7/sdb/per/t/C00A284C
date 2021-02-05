@@ -1,0 +1,19 @@
+{
+    "contents" : "library(\"parallelMap\")\nlibrary(\"BatchJobs\")\nlibrary(mlr)\n\nlibrary(dplyr)\n\n\n\n\n#parallelStartMPI(7)\nparallelStart(\"multicore\", 7)\n\ndata = read.csv(\"data/train.csv\")\ntrainData = sample_n(data, 50000)\n\nn = getTaskSize(bh.task)\ntrain.set = sample(n, size = n/3)\n\ntask = makeClassifTask(id = \"Beeline\", data = trainData, target = \"y\")\ntreeLrn = makeLearner(\"classif.randomForestSRC\", predict.type = \"prob\",\n                  par.vals = list(ntree = 2),\n                  fix.factors.prediction = TRUE)\n\n#mod = train(lrn, task)\n#pred = predict(mod, newdata = iris.test)\n\nrdesc = makeResampleDesc(\"CV\", iters = 7, stratify = TRUE)\nr = resample(treeLrn, task, rdesc, measures = list(acc, timetrain, mmce))\n\nparallelStop()",
+    "created" : 1445457303689.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3194099024",
+    "id" : "C00A284C",
+    "lastKnownWriteTime" : 1445466363,
+    "path" : "~/programming/projects/beeline_challenge/r_project/mlr_forest.R",
+    "project_path" : "mlr_forest.R",
+    "properties" : {
+        "notebook_format" : "html_document",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

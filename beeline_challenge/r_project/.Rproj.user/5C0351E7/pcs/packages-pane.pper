@@ -1,0 +1,7 @@
+{
+    "installOptions" : {
+        "installDependencies" : true,
+        "installFromRepository" : true,
+        "libraryPath" : "/home/haukot/programming/projects/beeline_challenge/r_project/packrat/lib/x86_64-pc-linux-gnu/3.2.2"
+    }
+}

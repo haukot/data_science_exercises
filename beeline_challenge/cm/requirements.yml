@@ -1,0 +1,6 @@
+- src: smola.java
+- name: ANXS.scala
+  src: "https://github.com/ANXS/scala"
+
+- name: azavea.spark
+  src: "https://github.com/Khelek/ansible-spark"

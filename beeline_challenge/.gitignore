@@ -1,0 +1,35 @@
+*.class
+*.log
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+build/
+.gradle/
+
+results/
+cm/ansible-deps/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+#ide project files
+.idea
+*.iml
+*~
+\#*\#
+.\#*
+*.swn
+*.swp
+*.swo
+*.swm
+*.rdb
+#

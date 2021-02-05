@@ -1,0 +1,14 @@
+- name: add gradle repo
+  apt_repository: repo='ppa:cwchien/gradle'
+  tags: [packages, gradle]
+
+- name: Updates apt cache
+  apt: update_cache=true
+  tags: [packages]
+
+- name: Installs necessary packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - maven
+    - gradle-2.4
+  tags: [packages]

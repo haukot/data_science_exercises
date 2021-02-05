@@ -1,0 +1,37 @@
+_build
+priv/
+priv/*
+*.beam
+erl_crash.dump
+/test/log/*
+*~
+\#*\#
+.\#*
+
+.deps_plt
+log
+.eunit
+*.swp
+*.swo
+_rel
+*.log
+
+## JetBrains.gitignore from https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+## Directory-based project format:
+.idea/
+## File-based project format:
+*.ipr
+*.iws
+## Plugin-specific files:
+# IntelliJ
+out/
+
+#
+node_modules
+.tmp
+
+.vagrant/
+Vagrantfile

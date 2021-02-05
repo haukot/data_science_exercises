@@ -1,0 +1,27 @@
+---
+- hosts: 127.0.0.1
+  roles:
+    - role: smola.java
+      sudo: yes
+      java_packages:
+        - oracle-java8-installer
+        - oracle-java7-installer
+        - oracle-java7-set-default
+      tags: [java]
+
+    - role: ANXS.scala
+      sudo: yes
+      scala_versions: ["2.10.4"]              # A list of scala versions you want to have installed
+      scala_default_version: "2.10.4"         # The scala version you want to be the system default
+      scala_sbt_version: "0.13.9"             # The version of sbt to install
+      tags: [scala]
+
+    - role: common
+      sudo: yes
+      tags: [common]
+
+# Мб и не надо, gradle чтото сам ставит(1.4.0 правда)
+#    - role: "azavea.spark"
+#      sudo: yes
+#      spark_version: "1.5.1-bin-hadoop2.6"
+#      tags: [spark]
